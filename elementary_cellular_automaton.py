@@ -1,5 +1,6 @@
+import itertools as i
 rule = 30
-r = dict(zip(["111","110","101","100","011","010","001","000"],[int(x) for x in str(bin(rule)[2:].zfill(8))]))
+r = dict(zip(["".join(x) for x in i.product(*[["0","1"]]*3)][::-1],[int(x) for x in str(bin(rule)[2:].zfill(8))]))
 
 s = [0,1,0]
 
